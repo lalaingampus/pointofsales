@@ -1,3 +1,26 @@
 List of product<br>
-{{page-title "Index"}}
-{{outlet}}
+{{#link-to "product.create"}}
+ Create New Product
+{{/link-to}}
+<hr>
+{{#if model}}
+ <ul>
+  {{#each model as |item|}}
+   <li>
+    Tipe Handphone: {{item.name}}<br>
+    Ringtone: {{if item.isPolyphonic "Polyphonic" "Monophonic"}}<br>
+    
+    {{#link-to "product.detail" item.id}}
+     Show Detail
+    {{/link-to}}
+ 
+    {{#link-to "product.edit" item.id}}
+     Edit Data
+    {{/link-to}}
+     
+   </li>
+  {{/each}}
+ </ul>
+{{else}}
+ <h1>Data tidak ditemukan</h1>
+{{/if}}

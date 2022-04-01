@@ -1,3 +1,12 @@
 Create New Product<br>
-{{page-title "Create"}}
-{{outlet}}
+<br>
+Tipe Handphone: <Input @type="text" @value={{model.name}}/><br> 
+Description: <Textarea cols="50" rows="50" @value={{model.description}}/><br>
+Purchase Price: <Input @type="numeric" @value={{model.purchasePrice}}/><br>
+Sell Price: <Input @type="numeric" @value={{model.sellPrice}}/><br>
+Ringtone Mode: <Input @type="checkbox" @checked={{model.isPolyphonic}}/> Is Polyphonic<br>
+
+<button type="button">Save</button>
+{{#link-to "product"}}
+ Back to list
+{{/link-to}}
