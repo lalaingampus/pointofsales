@@ -23,25 +23,30 @@ export default function () {
 
     https://www.ember-cli-mirage.com/docs/route-handlers/shorthands
   */
-  let products = [
-    {
-      type: 'products',
-      id: '1',
-      attributes: {
-        name: 'Siemens M-55',
-        description: 'Handphone Polyphonic',
-        'purchase-price': 1500000,
-        'sell-price': 5888888,
-        'is-polyphonic': true,
-      },
-    },
-  ];
+  // let products = [
+  //   {
+  //     type: 'products',
+  //     id: '1',
+  //     attributes: {
+  //       name: 'Siemens M-55',
+  //       description: 'Handphone Polyphonic',
+  //       'purchase-price': 1500000,
+  //       'sell-price': 5888888,
+  //       'is-polyphonic': true,
+  //     },
+  //   },
+  // ];
 
-  this.get('/products', function (db, requrest) {
-    return { data: products };
-  });
+  // this.get('/products', function (db, requrest) {
+  //  return { data: products };
+  // });
 
-  this.get('/products/:id', function (db, request) {
-    return { data: products.find((p) => request.param.id == p.id) };
-  });
+  // this.get('/products/:id', function (db, request) {
+  //  return { data: products.find((p) => request.param.id == p.id) };
+  //});
+
+  this.get('/products', 'product');
+  this.post('/products', 'product');
+  this.put('/products/:id'), this.patch('/products/:id', 'product');
+  this.del('/products/:id', 'product');
 }
